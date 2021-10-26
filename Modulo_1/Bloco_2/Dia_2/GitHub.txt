@@ -1,1 +1,6 @@
 - internet
+- Unix 
+- Bash
+- Git
+- HTML
+- CLL 
