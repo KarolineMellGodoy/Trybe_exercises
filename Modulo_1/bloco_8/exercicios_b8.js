@@ -1,4 +1,4 @@
-//DIA 1
+//--------------------------------------------DIA 1------------------------
 
 // const funcao1 = () => "Acordando!";
 // const funcao2 = () => "Bora tomar café!";
@@ -84,9 +84,7 @@ resposta ("N.A") não altera-se a contagem. */
 //   return -0,5;
 // }));
 
-//-----------------------------------------------------
-
-//DIA 2
+//---------------------DIA 2-----------------------------------
 
 /* const students = [
   {name: 'Maria', grade:70, approved: ''},
@@ -165,3 +163,260 @@ people.sort((Object1, Object2) => Object1.age - Object2.age);
 
 console.log(people);
  */
+
+// -----------------------------------DIA 3----------------------------------------
+
+// FILTER
+
+/* const numbers = [19, 21, 30, 3, 45, 22, 15];
+
+const isEvent2 = numbers.filter((number) => number % 2 === 0);
+
+console.log(isEvent2); */
+
+//-----------------------------------------------------------
+
+// deseja-se apenas as pessoas que não possuem ainda idade para dirigir:
+
+/* const objPeople = [
+    { name: 'José', age: 21 },
+    { name: 'Lucas', age: 19 },
+    { name: 'Maria', age: 16 },
+    { name: 'Gilberto', age: 18 },
+    { name: 'Vitor', age: 15 },
+  ];
+
+  const verifyAgeDrive = (arrayPeople) => (
+      arrayPeople.filter((people) => (people.age < 18))
+  );
+
+  console.log(verifyAgeDrive(objPeople)); */
+
+  //-----------------------------------------------------------
+
+   // Filtra todos os estudantes que não têm o nome 'Ricardo' e retorna um array com eles. Na prática, remove o Ricardo do array.
+
+/* const arrayMyStudents = ['Maria', 'Manuela', 'Jorge', 'Karoline', 'Murilo'];
+
+const removeStudentByName = (name, listStudents) =>
+  listStudents.filter((student) => student !== name);
+ 
+
+const newListStudents = removeStudentByName('Karoline', arrayMyStudents);
+console.log(newListStudents); */
+
+//-----------------------------------------------------------------
+
+//EXEMPLO VIDEO CORSE
+
+/* let listaDePessoasAprovadas = [
+  'murilopacos@gmail.com',
+  'karolinemell@gmail.com',
+  'barbaranadreotti@gmail.com',
+  'diegozanni@gmail.com',
+]
+
+const enviarEmail = (objetoEmail) => {
+  console.log(`Email para ${objetoEmail.email} com a nota ${objetoEmail.nota} enviado com sucesso!`);
+};
+
+let listaDeEmails;
+
+listaDeEmails = listaDePessoasAprovadas.map((email) => {
+  return { email: email, nota: 10 };
+});
+
+listaDeEmails.forEach((objetoEmail) => enviarEmail(objetoEmail)); */
+
+// ***** exercios do Map fiz somente dos livros em outro arquivo.
+
+//--------------------------------------- DIA 4 ----------------------------------
+
+//REDUCE
+
+/* 
+const numbers = [32, 15, 3, 2, -5, 56, 10];
+let sumNumbers = 0;
+// A variável 'acumula', a cada iteração do for, o resultado da operação feita lá!
+
+for (let index = 0; index < numbers.length; index += 1) {
+  sumNumbers += numbers[index];
+}
+console.log(sumNumbers); // 113
+
+//COM REDUCE 
+
+const numbers = [32, 15, 3, 2, -5, 56, 10];
+
+const sumNumbers = numbers.reduce((result, number) => result + number); // O parâmetro `result` é o acumulador. Ele recebe, do `reduce`, o retorno da função a cada iteração.
+console.log(sumNumbers); // 113
+
+// Ou seja:
+
+const getSum = (result, number) => result + number;
+const sumNumbers = numbers.reduce(getSum);
+console.log(sumNumbers); // 113 */
+
+//------------------------------------------------------------------------------
+
+/* 
+const numbers = [32, 15, 3, 2, -5, 56, 10];
+
+const getSum = (result, number) => {
+  console.log(result); // 10 42 57 60 62 57 113
+  return result + number;
+  };
+const sumNumbers = numbers.reduce(getSum, 10);
+console.log(sumNumbers); // 123
+ */
+
+
+
+
+
+
+
+
+// ---------------------------------------- DIA 5 ----------------------------------
+
+// SPREAD OPERATOR
+
+/* 
+const numbers = [1, 2, 3];
+
+const newArray = [...numbers, 4, 5, 6];
+console.log(newArray); // [ 1, 2, 3, 4, 5, 6 ]
+console.log(numbers); // [ 1, 2, 3 ]
+ */
+// -------------------------------------------------------------
+/* 
+const spring = ['OUT', 'NOV', 'DEZ'];
+const summer = ['JAN', 'FEV', 'MAR'];
+const fall = ['ABR', 'MAI', 'JUN'];
+const winter = ['JUL', 'AGO', 'SET'];
+
+const months = [...summer, ...fall, ...winter, ...spring];
+console.log(months); /* [
+  'JAN', 'FEV', 'MAR',
+  'ABR', 'MAI', 'JUN',
+  'JUL', 'AGO', 'SET',
+  'OUT', 'NOV', 'DEZ'
+] */
+
+// ---------------------------------------------------------------
+/* 
+const imc = (peso, altura) => (peso / (altura * altura)).toFixed(2);
+const patientInfo = [60, 1.7];
+
+console.log(imc(...patientInfo)); // 20.76
+ */
+// ----------------------------------------------------------------
+/* 
+const randomNumbers = [57, 8, 5, 800, 152, 74, 630, 98, 40];
+
+console.log(Math.max(...randomNumbers)); // 800
+console.log(Math.min(...randomNumbers)); // 5
+ */
+// ----------------------------------------------------------------
+/* 
+const people = {
+  id: 101,
+  name: 'Alysson',
+  age: 25,
+};
+
+const about = {
+  address: 'Av. Getúlio Vargas, 1000',
+  occupation: 'Developer',
+};
+
+const customer = { ...people, ...about };
+console.log(customer); /* {
+  id: 101,
+  name: 'Alysson',
+  age: 25,
+  address: 'Av. Getúlio Vargas, 1000',
+  occupation: 'Developer'
+} */
+
+// ------------------------------------------------------------------
+/* 
+const specialFruit = ['morango', 'banana', 'manga'];
+const additionalItens = ['chocolate', 'leite-condensado', 'açai'];
+
+//*** PRIMEIRA OPÇÃO RESOLVER
+
+const fruitSalad = (fruit, additional) => {
+  const addFruts = [...fruit, ...additional];
+  return addFruts;
+};
+
+console.log(fruitSalad(specialFruit, additionalItens));
+
+//*** SEGUNDA OPÇÃO RESOLVER
+
+const addFruits = [ ...specialFruit, ...additionalItens];
+
+console.log(addFruits); */
+
+//------------------------------------------------------------------
+
+// Rest
+
+/* 
+function quantosParams(...args) {
+  console.log('parâmetros:', args);
+  return `Você passou ${args.length} parâmetros para a função.`;
+}
+
+console.log(quantosParams(0, 1, 2)); // Você passou 3 parâmetros para a função.
+console.log(quantosParams('string', null, [1, 2, 3], { })); // Você passou 4 parâmetros para a função.
+ */
+
+//------------------------------------------------------------------
+
+/* 
+const sum = (...args) => args.reduce((accumulator, current) => accumulator + current, 0);
+console.log(sum(4, 7, 8, 9, 60)); // 88
+ */
+
+//------------------------------------------------------------------
+
+// Object Destructuring
+/* 
+const product = {
+  name: 'Smart TV Crystal UHD',
+  price: '1899.05',
+  seller: 'Casas de Minas',
+};
+
+const { name, seller } = product;
+console.log(name); // Smart TV Crystal UHD
+console.log(seller); // Casas de Minas
+
+ */
+
+//----------------------AULA AO VIVO - REDUCE --------------------
+/* 
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const somaFiltrados = numbers
+  .filter((item) => item < 8 )
+  .reduce((acumulador,item) => acumulador + item);
+
+  console.log(somaFiltrados);
+ */
+  //**** ESSA SOMA TBM DÁ CERTO COM JUNTAR PALAVRAS
+
+  -----------------------------------------------------------------------------------
+
+  /* 
+function getOldestFromFirstSpecies(id) {
+  const oldestAnimal = species.find((specie) => specie.id === employees // find filtrar o id dentro do employees
+    .find((employee) => employee.id === id) // o que foi filtrado da id entre species e employees achar o que é igual
+    .responsibleFor[0]).residents // em employees achar o responsibleFor e com o nomes dos animais no array acha em residents os animais
+    .sort((a, b) => b.age - a.age)[0]; // coloca em ordem os animais 
+
+  return [oldestAnimal.name, oldestAnimal.sex, oldestAnimal.age]; */
+
+  
