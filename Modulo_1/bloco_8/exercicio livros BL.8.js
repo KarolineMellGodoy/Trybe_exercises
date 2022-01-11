@@ -61,6 +61,85 @@ const books = [
   },
 ];
 
+// ----------------- FILTER / MAP --------------------------------------------
+
+/* 1 - Crie um array com strings no formato NOME_DO_LIVRO - GÊNERO_DO_LIVRO - NOME_DA_PESSOA_AUTORA
+Dica: Use a função map */
+
+/* function formatedBookNames() {
+ return books.map((book) => `Nome: ${book.name} Genero: ${book.genre} Autor: ${book.author.name}`);
+}
+
+console.log(formatedBookNames());
+ */
+
+/* 
+2 - Construa um array de objetos a partir do array de livros. Cada objeto deve conter uma propriedade author 
+, com o nome da pessoa autora do livro, e uma propriedade age com a idade dessa pessoa quando o livro foi 
+lançado. O array deve ser ordenado por idade, ou seja, da pessoa mais jovem para a mais velha considerando
+ suas idades quando o livro foi lançado.
+
+Dica: use as funções map , sort
+ */
+
+/* 
+function nameAndAge() {
+  return books.map((book) => ({age: book.releaseYear - book.author.birthYear, author: book.author.name}))
+  .sort((Object1, Object2) => Object1.age - Object2.age);
+}
+
+console.log(nameAndAge());
+ */
+
+/* 
+3 - Crie um array com todos os objetos que possuem gênero ficção científica ou fantasia.
+Dica: use a função filter ;
+ */
+
+/* 
+function fantasyOrScienceFiction() {
+  return books.filter((book) => (book.genre == 'Fantasia' || 'Ficção Científica'))
+}
+
+console.log(fantasyOrScienceFiction());
+ */
+
+/* 
+4 - Crie um array ordenado pelos livros com mais de 60 anos de publicação e 
+ordene-o pelo livro mais velho.
+
+Dica: use as funções filter e sort
+ */
+
+/* 
+function oldBooksOrdered() {
+  const currentYear = new Date().getFullYear();
+  return books.filter((book) => (
+    book.releaseYear < currentYear - 60
+  )).sort((Object1, Object2) => Object1.releaseYear - Object2.releaseYear);
+}
+
+console.log(oldBooksOrdered());
+ */
+
+/* 
+5 - Crie um array em ordem alfabética apenas com os nomes de todas as pessoas
+ autoras de ficção científica ou fantasia.
+ */
+
+/*  
+ function fantasyOrScienceFictionAuthors() {
+  const wantedGenres = ['Fantasia', 'Ficção Científica'];
+  return books
+  .filter((book) => (wantedGenres.includes(book.genre)))
+  .map((book) => book.author.name).sort();
+ }
+
+console.log(fantasyOrScienceFictionAuthors());
+*/
+
+// -------------------------------------------------
+
 /* 1 - Encontre o nome da primeira pessoa autora do livro nascida no ano de 1947.
 Dica: use a função find .
  */
@@ -130,3 +209,4 @@ function authorUnique() {
       (bookSome.author.birthYear === book.author.birthYear)
       && (bookSome.author.name !== book.author.name)));  
 } */
+
